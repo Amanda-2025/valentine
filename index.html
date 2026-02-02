@@ -2,28 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Happy Valentine’s ❤️</title>
+  <title>Happy Valentine’s Day my Handsome ❤️</title>
+  <!-- Google Font for romantic style -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Background hearts -->
+  <div class="heart-bg"></div>
 
-<div class="card">
-  <h1>Happy Valentine’s Day 💘</h1>
-  <p class="subtitle">
-    To my handsome plot twist I never expected 😏
-  </p>
+  <div class="card">
+    <h1>Happy Valentine’s Day my Handsome ❤️</h1>
+    <p class="subtitle">I love you to the moon and back. Cheers to many more Valentines together 🥂❤️</p>
 
-  <img src="https://i.imgur.com/9XnZK0F.png" alt="love" class="photo">
+    <!-- I Spy Game -->
+    <div class="i-spy">
+      <p>💖 Find all the hidden hearts! 💖</p>
+      <div class="game-area">
+        <!-- Hidden items -->
+        <div class="hidden-item" style="top: 30%; left: 20%;" onclick="foundItem(this)">💌</div>
+        <div class="hidden-item" style="top: 60%; left: 50%;" onclick="foundItem(this)">🍫</div>
+        <div class="hidden-item" style="top: 40%; left: 75%;" onclick="foundItem(this)">🎈</div>
+        <div class="hidden-item" style="top: 70%; left: 25%;" onclick="foundItem(this)">🧸</div>
+      </div>
+      <p id="gameMessage"></p>
+    </div>
+  </div>
 
-  <button onclick="showLove()">Click me 💌</button>
-
-  <p id="hiddenText" class="hidden">
-    Cheers to many more Valentines with you 🥂❤️  
-    (Yes, I’m keeping you.)
-  </p>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-
