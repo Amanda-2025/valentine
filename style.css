@@ -66,10 +66,21 @@ body {
   position: fixed;
   inset: 0;
   background-image: radial-gradient(white 1px, transparent 1px);
-  background-size: 40px 40px;
-  opacity: 0.15;
+  background-size: 20px 20px; /* smaller spacing makes glitter denser */
+  background-repeat: repeat;
+  opacity: 0.3; /* make it a bit more visible */
   pointer-events: none;
+  z-index: 1; /* behind the container but above the body background */
 }
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+.glitter {
+  animation: twinkle 2s infinite ease-in-out;
+}
+
 
 /* Main container */
 .container {
