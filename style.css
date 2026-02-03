@@ -13,24 +13,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Floating hearts */
-.hearts::before {
-  content: "❤️ 💕 💖 💘";
-  position: fixed;
-  width: 100%;
-  top: 100%;
-  font-size: 30px;
-  animation: floatHearts 12s linear infinite;
-  text-align: center;
-  opacity: 0.5;
-}
 
-
-
-@keyframes floatHearts {
-  from { top: 100%; }
-  to { top: -20%; }
-}
 
 .hearts {
   position: fixed;
