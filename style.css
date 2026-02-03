@@ -66,39 +66,3 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* Game */
-h2 {
-  color: #b11226;
-}
-
-.hint {
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-/* I Spy board */
-.game-board {
-  position: relative;
-  width: 100%;
-  margin: 15px 0;
-}
-
-.game-board img {
-  width: 100%;
-  border-radius: 15px;
-}
-
-/* Hidden items */
-.item {
-  position: absolute;
-  font-size: 24px;
-  cursor: pointer;
-  user-select: none;
-}
-
-/* Result text */
-#result {
-  font-weight: bold;
-  color: #b11226;
-  margin-top: 10px;
-}
