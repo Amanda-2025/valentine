@@ -1,23 +1,25 @@
 let foundCount = 0;
-const totalItems = 4;
+const total = 5;
 
-function foundItem(element) {
-  element.style.display = "none"; // hide item after found
+const messages = [
+  "You found my heart 😏❤️",
+  "Love detected 💘",
+  "Okay Sherlock 😘",
+  "You’re really good at this 🥰",
+  "That one was meant for you 💌"
+];
+
+function found(el) {
+  el.style.display = "none";
   foundCount++;
-  
-  // Random fun messages
-  const messages = [
-    "You caught my heart! 😏❤️",
-    "Found the love! 🍫💘",
-    "Cheater! Just kidding 😘",
-    "Yay! You're good at finding love 🥰"
-  ];
 
-  document.getElementById("gameMessage").innerText = messages[Math.floor(Math.random() * messages.length)];
+  document.getElementById("result").innerText =
+    messages[Math.floor(Math.random() * messages.length)];
 
-  if(foundCount === totalItems) {
+  if (foundCount === total) {
     setTimeout(() => {
-      document.getElementById("gameMessage").innerText = "🎉 You completed the Valentine mission! 🥂❤️";
+      document.getElementById("result").innerText =
+        "🎉 You completed the Valentine mission! Cheers to us 🥂❤️";
     }, 500);
   }
 }
