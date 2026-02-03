@@ -2,31 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Happy Valentine’s Day my Handsome ❤️</title>
-  <!-- Google Font for romantic style -->
+  <title>Happy Valentine’s Day ❤️</title>
+
+  <!-- Romantic Font -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Background hearts -->
-  <div class="heart-bg"></div>
 
-  <div class="card">
-    <h1>Happy Valentine’s Day my Handsome ❤️</h1>
-    <p class="subtitle">I love you to the moon and back. Cheers to many more Valentines together 🥂❤️</p>
+  <!-- Floating hearts -->
+  <div class="hearts"></div>
 
-    <!-- I Spy Game -->
-    <div class="i-spy">
-      <p>💖 Find all the hidden hearts! 💖</p>
-      <div class="game-area">
-        <!-- Hidden items -->
-        <div class="hidden-item" style="top: 30%; left: 20%;" onclick="foundItem(this)">💌</div>
-        <div class="hidden-item" style="top: 60%; left: 50%;" onclick="foundItem(this)">🍫</div>
-        <div class="hidden-item" style="top: 40%; left: 75%;" onclick="foundItem(this)">🎈</div>
-        <div class="hidden-item" style="top: 70%; left: 25%;" onclick="foundItem(this)">🧸</div>
-      </div>
-      <p id="gameMessage"></p>
+  <!-- Glitter overlay -->
+  <div class="glitter"></div>
+
+  <div class="container">
+    <h1>Happy Valentine’s Day<br>my Handsome ❤️</h1>
+
+    <p class="message">
+      I love you to the moon and back.<br>
+      Cheers to many more Valentines together 🥂❤️
+    </p>
+
+    <h2>💖 Valentine I-Spy Game 💖</h2>
+    <p class="hint">Find all the hidden items by clicking them 😏</p>
+
+    <!-- I Spy Game Board -->
+    <div class="game-board">
+      <img src="51397048-68fd-4f5b-bbb7-27e095e50462.png" alt="I Spy Game">
+
+      <!-- Clickable hidden items -->
+      <div class="item" style="top:20%; left:30%;" onclick="found(this)">❤️</div>
+      <div class="item" style="top:45%; left:55%;" onclick="found(this)">🍕</div>
+      <div class="item" style="top:65%; left:25%;" onclick="found(this)">🍦</div>
+      <div class="item" style="top:30%; left:70%;" onclick="found(this)">💋</div>
+      <div class="item" style="top:75%; left:60%;" onclick="found(this)">💌</div>
     </div>
+
+    <p id="result"></p>
   </div>
 
   <script src="script.js"></script>
