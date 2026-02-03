@@ -1,81 +1,104 @@
-/* Background gradient + glitter */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  height: 100vh;
-  background: linear-gradient(135deg, #ffc0cb, #800000, #4b0000);
-  overflow: hidden;
-  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffb6c1, #800020, #4b0000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
 }
 
-/* Floating hearts animation */
-.heart-bg::before, .heart-bg::after {
-  content: "❤️";
-  position: absolute;
+/* Floating hearts */
+.hearts::before {
+  content: "❤️ 💕 💖 💘";
+  position: fixed;
+  width: 100%;
+  top: 100%;
   font-size: 30px;
-  animation: float 5s linear infinite;
-  opacity: 0.7;
-}
-
-.heart-bg::after {
-  animation-delay: 2s;
-}
-
-@keyframes float {
-  0% { transform: translateY(100vh) translateX(0) rotate(0deg); }
-  50% { transform: translateY(50vh) translateX(20px) rotate(180deg); }
-  100% { transform: translateY(-10vh) translateX(0) rotate(360deg); }
-}
-
-/* Card styling */
-.card {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 20px;
-  width: 350px;
-  padding: 25px;
+  animation: floatHearts 12s linear infinite;
   text-align: center;
-  margin: 50px auto;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  opacity: 0.5;
 }
 
+@keyframes floatHearts {
+  from { top: 100%; }
+  to { top: -20%; }
+}
+
+/* Glitter effect */
+.glitter {
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* Main container */
+.container {
+  background: rgba(255,255,255,0.92);
+  padding: 30px;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 2;
+}
+
+/* Heading */
 h1 {
   font-family: 'Pacifico', cursive;
-  font-size: 2em;
-  color: #800000;
+  color: #800020;
   margin-bottom: 10px;
 }
 
-.subtitle {
-  font-size: 1em;
-  color: #4b0000;
+/* Message */
+.message {
+  font-size: 16px;
   margin-bottom: 20px;
 }
 
-/* I Spy Game */
-.i-spy p {
-  font-weight: bold;
+/* Game */
+h2 {
+  color: #b11226;
+}
+
+.hint {
+  font-size: 14px;
   margin-bottom: 10px;
 }
 
-.game-area {
+/* I Spy board */
+.game-board {
   position: relative;
   width: 100%;
-  height: 250px;
-  background: url('https://i.imgur.com/7q6xY2h.png') no-repeat center/cover; /* placeholder Valentine collage */
-  border-radius: 15px;
-  overflow: hidden;
-  margin-bottom: 10px;
+  margin: 15px 0;
 }
 
-.hidden-item {
+.game-board img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* Hidden items */
+.item {
   position: absolute;
   font-size: 24px;
   cursor: pointer;
   user-select: none;
 }
 
-#gameMessage {
-  color: #e63946;
+/* Result text */
+#result {
   font-weight: bold;
+  color: #b11226;
   margin-top: 10px;
 }
