@@ -25,22 +25,59 @@ body {
   opacity: 0.5;
 }
 
-/* Floating hearts */
-.hearts::after {
-  content: "❤️ 💕 💖 💘";
-  position: fixed;
-  width: 100%;
-  top: 100%;
-  font-size: 30px;
-  animation: floatHearts 12s linear infinite;
-  text-align: center;
-  opacity: 0.5;
-}
+
 
 @keyframes floatHearts {
   from { top: 100%; }
   to { top: -20%; }
 }
+
+.hearts {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #b11226;
+  transform: rotate(45deg);
+  animation: floatUp 12s linear infinite;
+  opacity: 0.6;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #b11226;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(100vh) rotate(45deg);
+  }
+  to {
+    transform: translateY(-20vh) rotate(45deg);
+  }
+}
+
 
 /* Glitter effect */
 .glitter {
